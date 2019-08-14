@@ -1,56 +1,80 @@
 <?xml version="1.0"?>
 <package>
     <name>Diglin_Username</name>
-    <version>2.2.1</version>
+    <version>2.2.2</version>
     <stability>stable</stability>
     <license uri="http://www.opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
     <channel>community</channel>
     <extends/>
-    <summary>Create and login to an account thanks to a username AND email address.&#xD;
+    <summary>Create and login to an account thanks to a username AND email address.&amp;#xD;&#xD;
 Allow to disable an account from backend. The user will be blocked if the option in the customer backend is set to no</summary>
-    <description>## Features&#xD;
+    <description>This module allows you to:&amp;#xD;&#xD;
+&amp;#xD;&#xD;
+- login with a username or email address. it can be done from frontend during checkout or getting access to the customer account&amp;#xD;&#xD;
+- Username can have letters, digits, '_-' but no other special characters&amp;#xD;&#xD;
+- Username length is from 6 until 30 characters possible&amp;#xD;&#xD;
+- save a username from frontend (register account or checkout process) or from backend by editing a customer account&amp;#xD;&#xD;
+- check that the username doesn't already exists&amp;#xD;&#xD;
+- deactivate temporary customer account from Customer Management page (bonus functionnality). The user will be blocked if the option in the customer backend is set to no.&amp;#xD;&#xD;
+- The default template override some customer and checkout views to adapt display for login pages, checkout process and account edition in frontend. If you have a customized template, please check the layout file username.xml and compare with your template to use or adapt to your situation.&amp;#xD;&#xD;
+&amp;#xD;&#xD;
+Compatible Magento version &amp;gt;= 1.4.2 until 1.9.1</description>
+    <notes>Version 2.2.2&#xD;
+- Fix issue with input validation (any kind of input was possible)&#xD;
 &#xD;
-- Magento 1.3 to 1.8.1&#xD;
-- Login with a username and/or email, it can be done from frontend during checkout or getting access to the customer account&#xD;
-- Save a username from frontend (register account or checkout process) or from backend by editing a customer account&#xD;
-- Check that the username doesn't already exists&#xD;
-- Allow you to deactivate temporary customer account from Customer Management page (bonus functionality from version &gt; Magento 1.4.x). The user will be blocked if the option in the customer backend is set to no.&#xD;
-- The default templates override some customer and checkout views to adapt display for login pages, checkout process and account edition in frontend. If you have a customized template, please check the layout file username.xml and compare with your template to use or adapt to your situation.&#xD;
-- When you have already customers in your system and you do a first install of this plugin, a username will be generated for each customer based on a part of his email and a unique id. (e.g. email address is "developer@localhost.com" -&gt; username is "developer1235467")&#xD;
-- Configurable options to define what kind of username to support: only letters, only digits, both or default (digits, letters and special characters '-_')&#xD;
-- Configurable options to set the maximum and minium string length&#xD;
-- Display Username of each customer in the Customer Management Grid&#xD;
-- Allow or not the customer to edit the username in My Account in frontend&#xD;
-- Compatible and tested with Magento version &gt;=1.4.2 until 1.7.x&#xD;
-- support username when a customer wants to retrieve his forgotten password thanks to the "Forgotten Password" form&#xD;
-- support username into the template of the persistent module&#xD;
-- NEW - support Custom Regex validation (Select the Input validation 'custom' from the configuration page)&#xD;
-&#xD;
-Use MageTrashApp to uninstall this module correctly: https://github.com/magento-hackathon/MageTrashApp</description>
-    <notes>- 2.2.1: fix input validation&#xD;
-- 2.2.0: support Magento 1.8 + custom input validation of username&#xD;
-- 2.0.7: update MageTrashApp, fix some bug in specific case during checkout process&#xD;
-- 2.0.5: remove test text&#xD;
-- 2.0.4: fix of "username exists" error message&#xD;
-- 2.0.3: fix bad Observer merge&#xD;
-- 2.0.1 / 2.0.2:&#xD;
-    - Add composer, modman, MageTrashApp support to help installing and uninstalling this module&#xD;
-    - Move template to design base package&#xD;
-    - Fix several bugs like saving username from frontend, checkout process as guest, etc&#xD;
-    - Follow best practices for module setup&#xD;
-- Version 1.5.0: update for Magento 1.7&#xD;
-- Version 1.4.0: fix a problem to enable and disable a customer account from Customer Management in backend&#xD;
-- Version 1.3.0: new features. Configurable options: display username in Manage Customer Grid, allow customer to edit or not username in frontend My Account, define maximum and minimum length of username for the forms, define what kind of validation desired (letters, digits, both or both " _-)&#xD;
-- Version 1.2.1: fix customer account layout &#xD;
-- Version 1.2.0: fix problem with case sensitive OS, limit the number of characters possible (now it's between 6 and 30 letters), allow only some characters, try to provide compatibility update for users who had the old Jfusion_Username module, generate a username for old customers who don't have it, based on email address and a random id, improve the german translation, tested on 1.6.2 and 1.5.1&#xD;
-- Version 1.1.0: change the module name from Jfusion_Customer to Diglin_Username, fix bugs with checkout frontend and backend and with old customers&#xD;
-- Version 1.0.2 - fix a bug with the installation&#xD;
-- Version 1.0.1 - fix bug in sql query during installation on prefixed tables, add german translation, do package for Magento version prior to 1.5 and version 1.5.x&#xD;
-- Version 1.0.0 - stable version</notes>
-    <authors><author><name>diglin</name><user>diglin</user><email>website@diglin.com</email></author></authors>
-    <date>2014-02-10</date>
-    <time>22:41:04</time>
-    <contents><target name="mageetc"><dir name="modules"><file name="Diglin_Username.xml" hash="79603fae3def6dd098d4be51897e1ec6"/><file name="Hackathon_MageTrashApp.xml" hash="247c6b5278c3681efe24f504c5b48970"/></dir></target><target name="magecommunity"><dir name="Diglin"><dir name="Username"><dir name="Block"><dir name="Adminhtml"><dir name="Config"><dir name="Source"><file name="Hint.php" hash="0dc648be933060aa2399001829070b79"/></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="e830b16b7c7de00d5d93d246195a9551"/></dir><dir name="Model"><dir name="Config"><file name="Share.php" hash="e029c5424074d0ce28a2f2139a748dc3"/><dir name="Source"><file name="Inputvalidation.php" hash="6b9037b526f1ff976a07870143860291"/></dir></dir><file name="Customer.php" hash="960ea3f70df8e0cb4f495b2cf6d6e93e"/><dir name="Entity"><file name="Customer.php" hash="54627255257244df3b6103ec34a5d9cb"/><file name="Setup.php" hash="dad9545b28dd785f23ef59d48fdfec8a"/></dir><file name="Form.php" hash="6b90e7aa54a6f71e8a806a059fb277ae"/><dir name="Import"><dir name="Entity"><file name="Customer.php" hash="aa85749489175a6d595618609ca6619b"/></dir></dir><file name="Observer.php" hash="d2922eead0f0485b18d700bda2cc34de"/></dir><dir name="controllers"><file name="AccountController.php" hash="a8ab01bd291f779d1b5700de9c24218c"/></dir><dir name="data"><dir name="username_setup"><file name="data-install-2.0.0.php" hash="b80e44774725d1805774b2145b7635f3"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="17c135749877ba875eb061c16c5b0a34"/><file name="config.xml" hash="20e844986975107ffb3ba29771c875d3"/><file name="system.xml" hash="90651edfbc736daa84f540e5afa40fff"/><file name="uninstall.txt" hash="70ce51e6ea76f07394760ca567cd6294"/></dir><dir name="sql"><dir name="username_setup"><file name="install-2.0.0.php" hash="cb1d129962d2776c70542363c846b810"/><file name="mysql4-install-1.0.0.php" hash="ca05dc1cbee01889f8c511f363082be2"/><file name="mysql4-upgrade-1.0.0-1.1.0.php" hash="f5cf8a2c6d900844d358f77e32d37131"/><file name="mysql4-upgrade-1.1.0-1.2.0.php" hash="7f38c7d1f56406b19a7c534c72840005"/><file name="mysql4-upgrade-1.3.0-1.4.0.php" hash="d077137a9fba3524bbcc8ec3076e010c"/><file name="mysql4-upgrade-1.4.0-2.0.0.php" hash="4a26c28b54d3d87aed21328d625223ef"/><file name="uninstall.php" hash="4b1c8bb67bc8bca38afd6e2f3b93d116"/></dir></dir></dir></dir><dir name="Hackathon"><dir name="MageTrashApp"><dir name="Adminhtml"><dir name="Block"><dir name="System"><dir name="Config"><dir name="Form"><dir name="Fieldset"><dir name="Modules"><file name="MageTrashApp.php" hash="8dc018926d9478d2ee12b505033e312a"/></dir></dir></dir></dir></dir></dir></dir><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><dir name="Form"><dir name="Fieldset"><dir name="Modules"><file name="MageTrashApp.php" hash="190b72529aa16a61b6bc2490774304e3"/><file name="Rewind.php" hash="6a7d8004e79fd2f5226b2ca6f1a32d48"/></dir></dir></dir></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="6ea1f755b3470cd8254fec25977f08bd"/></dir><dir name="Model"><dir name="Adminhtml"><dir name="Config"><file name="Data.php" hash="666da6fe6343b0bf38ac6313242871bc"/></dir></dir><file name="CoreResource.php" hash="48faa17486cbdb58b5b58e26a892bc8a"/><file name="Observer.php" hash="4edb98984908198865fd9a73fe15ccab"/><file name="PearWrapper.php" hash="5bfc49da1c0c4b8801217e1ece28b7e9"/><dir name="Resource"><file name="Resource.php" hash="ba46996c23e6c17db231fcfd7eeee1cd"/><file name="Setup.php" hash="01c3a067fb830edd7c2783b9a9b2d2bb"/></dir><file name="Uninstall.php" hash="e8fe01333bae1d1c187b7eb95568e903"/></dir><dir name="Test"><dir name="Config"><file name="Config.php" hash="71d4e2715f295ac097316e02736fc986"/></dir><dir name="Helper"><file name="DataTest.php" hash="7bfebdb2953dc220457240fd01503ab7"/></dir><dir name="Model"><file name="Observer.php" hash="fbd80ba2d0eb8c6058f1a45d00e476f5"/></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="indexController.php" hash="b4ea9f1b928458c1af902416b91300d0"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="29e4e7211061fb73eeceb1a6dc510dad"/><file name="config.xml" hash="767b2cd648240b07c858ef7282827571"/><file name="doc.uninstall.txt" hash="b2de80f292016c5392b0edbc21ac29f1"/><file name="system.xml" hash="ca750acb4682fc8edea2f5aa451278a5"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="username"><dir><dir name="checkout"><dir name="onepage"><dir name="13"><file name="billing.phtml" hash="e7875ec85ee418539807266e0f8d7581"/></dir><dir name="17"><file name="billing.phtml" hash="35a3604ae93631f7a6522f923d2d364d"/></dir><file name="billing.phtml" hash="da260e1dcfaf0c1200e8149dee2cd9b9"/><file name="login.phtml" hash="456f485f5c5b34f42ab7b3d6b842a336"/></dir></dir><dir name="customer"><dir name="account"><dir name="dashboard"><file name="info.phtml" hash="762e44bffe4596658d674500cf3aa8cd"/></dir></dir><dir name="form"><dir name="13"><file name="register.phtml" hash="3bb3748061cf515d09ca8f3a0283326d"/></dir><dir name="17"><file name="register.phtml" hash="57fb12c734a0e7842da56d64ac93fe67"/></dir><file name="edit.phtml" hash="271a5b40a1371683ba64849c2cf8ce54"/><file name="forgotpassword.phtml" hash="a672db46aae548b939a64d32ffccd772"/><file name="login.phtml" hash="43ac5db68fef36ff156f7592f3eb34bf"/><file name="register.phtml" hash="2a74a300edcf780acb804b8cd25c393e"/></dir></dir><dir name="persistent"><dir name="checkout"><dir name="onepage"><file name="billing.phtml" hash="d65b0f7f56959385c5b6e6379479be1e"/><file name="login.phtml" hash="9c82c47edb76c8782a482c3a592eecc4"/></dir></dir><dir name="customer"><dir name="form"><file name="login.phtml" hash="cb6ada4391b79e57cf3b9f9b15425732"/><file name="register.phtml" hash="215b85f826cd94ce17cbff17199b1435"/></dir></dir></dir></dir></dir></dir><dir name="layout"><file name="username.xml" hash="432ef8d9bd05bdfedfae879c981ba95c"/></dir></dir></dir></dir></target><target name="magelocale"><dir name="en_GB"><file name="Diglin_Username.csv" hash="2d18fb6bfc2c4c56f19cfe7ee6761f4b"/></dir><dir name="en_US"><file name="Diglin_Username.csv" hash="2d18fb6bfc2c4c56f19cfe7ee6761f4b"/></dir><dir name="fr_FR"><file name="Diglin_Username.csv" hash="d8d025c852649fc8e9edd2aed5ab377a"/></dir><dir name="de_DE"><file name="Diglin_Username.csv" hash="7a0aa81dbdafe2ef121a08cd03c64893"/></dir></target></contents>
+Version 2.0.*&#xD;
+e694fcb Add custom input validation&#xD;
+85a0f51 Update translations&#xD;
+1ca6441 Update Copyright&#xD;
+799fc1b [FIX] prevent to save username when it's not allowed from configuration&#xD;
+55ab34e make the module compatible with MAgento 1.8, change copyright, move column logic for customer grid into observer&#xD;
+6c49218 Merge pull request #7 from gdhnz/master&#xD;
+bad7445 Add permission "allow everything" to adminhtml.xml to resolve admin 404 for the extension config screen under CE 1.8&#xD;
+fa712c7 Code factoring&#xD;
+6c603d8 fix comment typo&#xD;
+5f5fe14 change to version 2.0.7&#xD;
+41e58bb fix bad condition test in case of not found $customerId in Form.php. Use case, checkout process with already logged in customer.&#xD;
+b8e71c7 add submodule MageTrashApp&#xD;
+757a3e2 Update README.md&#xD;
+48244a4 add version 2.0.6&#xD;
+e9453ff generate correctly username for old customers while installing the module&#xD;
+f422067 Fix to the controller forgotPassword&#xD;
+fd71c66 change version to 2.0.5&#xD;
+67bf362 cleanup some test&#xD;
+adc2bb5 add fix when customer information are saved from backend, add observer fix for collection (do not know yet if it resolved hte problem of a user who contacted me about grid &#xD;
+1c0c07f change version number&#xD;
+4ab072f fix bad merging&#xD;
+cd2bb86 Update README.md&#xD;
+fa3f821 Update composer.json&#xD;
+d10136e add dependency suggestion&#xD;
+ff053ba remove todo task&#xD;
+b300aa0 Fix a problem with sql data install with empty select query&#xD;
+5b179b5 add uninstall process for module MageTrashApp&#xD;
+ce428e9 add composer.json&#xD;
+d93cc55 merge observer&#xD;
+29d4c21 add condition to test if attribute username model exists before to save the config&#xD;
+14acf45 Update README.md&#xD;
+21f72b7 add missing column for sales_flat_order table&#xD;
+612052d improve checkout process as a guest (no complain that username is a required field when you are a guest), fix issue with install data script&#xD;
+aafb0be split template depending on the magento version, add missing template for use cases using persisten customer feature&#xD;
+ce9245b Fix or improve form model while saving new customer data&#xD;
+42444f3 Improve test if shop owner change the account sharing options&#xD;
+4d10edb Improve Username Module: setup is now completly rewritten for Magento 1.7, add username for forgotten password, allow now to disable the feature from configuration page, ch&#xD;
+c6b7250 add customer ID fix depending on the context&#xD;
+788e656 add optionable strtolower username&#xD;
+49cb18d add optionable strtolower username&#xD;
+dff09e0 Add modman and instruction to use it&#xD;
+2d6b6c8 Merge pull request #1 from clst/master&#xD;
+1d143e9 fix: weird quote characters in german language file&#xD;
+9cbf4a2 add: can now update is_active for existing customers&#xD;
+dfa9cc6 Fix some bug and add a way to import is_active attribute&#xD;
+60c7143 Update README.md&#xD;
+24afad2 add gitignore and license files&#xD;
+</notes>
+    <authors><author><name>diglin</name><user>diglin</user><email>sly@diglin.com</email></author></authors>
+    <date>2015-05-12</date>
+    <time>22:43:20</time>
+    <contents><target name="magecommunity"><dir name="Diglin"><dir name="Username"><dir name="Block"><dir name="Adminhtml"><dir name="Config"><dir name="Source"><file name="Generate.php" hash="5438831326f98427b2eba37bc822c040"/><file name="Hint.php" hash="96ae0eb9fd067807896f13aa5f044346"/></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="791ae37f3f82b28340a8c2be1234dbe9"/></dir><dir name="Model"><dir name="Config"><file name="Share.php" hash="1b45228f4e4e48192c3944f00390065d"/><dir name="Source"><file name="Inputvalidation.php" hash="299ad9a1d6aba9514eeb379900305f40"/></dir></dir><file name="Customer.php" hash="7b03b83d61e3c7a9e0ff5467c72b748b"/><dir name="Entity"><file name="Customer.php" hash="6f27941b523fbe2749415316a304b6aa"/><file name="Setup.php" hash="2988ff6bd777fe5dcd10286c91c5a92a"/></dir><file name="Form.php" hash="6cf2c09144695ea8aa855cf95ea72e03"/><dir name="Generate"><file name="Flag.php" hash="f1132a46a4a5496769ac9019a90f4847"/></dir><dir name="Import"><dir name="Entity"><file name="Customer.php" hash="8d116fe49dabdaf65c07e17ca31d6b7f"/></dir></dir><file name="Observer.php" hash="00b256411ff548db84ecb084388e28eb"/></dir><dir name="controllers"><file name="AccountController.php" hash="e6e78d271668d3c9650c4c3fd9f0f577"/><dir name="Adminhtml"><file name="SyncController.php" hash="8054f8a5f9b8470bb174867ffc2ab55a"/></dir></dir><dir name="data"><dir name="username_setup"><file name="data-install-2.0.0.php" hash="8494a84bae1af4a68829c315be517676"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="f9d21d4e64496e21dd35a9e9b20928a3"/><file name="config.xml" hash="14f4ea6cdca46b0776455579d50f9f9f"/><file name="system.xml" hash="732af4b70033a30012b8806888872450"/><file name="uninstall.txt" hash="4df056a32b360aea886be50f41e6756a"/></dir><dir name="sql"><dir name="username_setup"><file name="install-2.0.0.php" hash="3c2c5990ffcd3ed961d4aa7e937e802b"/><file name="mysql4-install-1.0.0.php" hash="c537ec7c53055b31c16f3f11f6319466"/><file name="mysql4-upgrade-1.0.0-1.1.0.php" hash="2aefd1b6a93e657aa1b41237ee6abf60"/><file name="mysql4-upgrade-1.1.0-1.2.0.php" hash="f310b67e2261057c00a30abb8f317720"/><file name="mysql4-upgrade-1.3.0-1.4.0.php" hash="cda7316bb85268e7dd0f31575b6acbe9"/><file name="mysql4-upgrade-1.4.0-2.0.0.php" hash="3377040e0d0ab53d72ca3194eedaa480"/><file name="uninstall.php" hash="7abbfcecdafe1cdb8c0d1e7a3b34cd7c"/><file name="upgrade-2.2.0-2.2.1.php" hash="0845008f1adc4241dd5afd7009353d31"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Diglin_Username.xml" hash="79603fae3def6dd098d4be51897e1ec6"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="username"><dir name="system"><dir name="config"><file name="generate.phtml" hash="a957b485487086b54ee200847cfd7033"/></dir></dir></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="username.xml" hash="dd930f6ce80905dffa3abdfe6e063534"/></dir><dir name="template"><dir name="username"><dir name="checkout"><dir name="onepage"><dir name="13"><file name="billing.phtml" hash="1c61a77c1220d12089afdaa190ea1f60"/></dir><dir name="17"><file name="billing.phtml" hash="f300428362fc60f1d497a683932ce2ef"/></dir><file name="billing.phtml" hash="b6ba7ad91fe9a771e7b96a63e73bf62b"/><file name="login.phtml" hash="c4358a929f03bd1183c3680cb77bade7"/></dir></dir><dir name="customer"><dir name="account"><dir name="dashboard"><file name="info.phtml" hash="518c8b40a8136f5ff1628af8ec9256a5"/></dir></dir><dir name="form"><dir name="13"><file name="register.phtml" hash="7b11d52277924851ebdcde0486659a31"/></dir><dir name="17"><file name="register.phtml" hash="8b6a62347a1185d2907fa452981a13d0"/></dir><file name="edit.phtml" hash="dcaac12c0dad4721414df15a7d3c9670"/><file name="forgotpassword.phtml" hash="8d77df979ff2b2ce2aba40575b8b9934"/><file name="login.phtml" hash="6b3e9264779efcfad98640cb561abcf2"/><file name="register.phtml" hash="55cf179850823cd1bc616a55ee8e5c3d"/></dir></dir><dir name="persistent"><dir name="checkout"><dir name="onepage"><file name="billing.phtml" hash="9a5f09956941185fa15ada3091fa77aa"/><file name="login.phtml" hash="8b192aa73817356215b05929a1bf47d1"/></dir></dir><dir name="customer"><dir name="form"><file name="login.phtml" hash="6c7e82dfd0ded5c7121d0c8fb103af22"/><file name="register.phtml" hash="1d2f93da259e846599ccff1434621f20"/></dir></dir></dir></dir></dir></dir></dir></dir></target><target name="magelocale"><dir name="de_DE"><file name="Diglin_Username.csv" hash="7a0aa81dbdafe2ef121a08cd03c64893"/></dir><dir name="en_GB"><file name="Diglin_Username.csv" hash="96cb410646498ef5f423dfff746e7370"/></dir><dir name="en_US"><file name="Diglin_Username.csv" hash="96cb410646498ef5f423dfff746e7370"/></dir><dir name="fr_FR"><file name="Diglin_Username.csv" hash="d8d025c852649fc8e9edd2aed5ab377a"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.2.9</min><max>6.0.0</max></php></required></dependencies>
 </package>
