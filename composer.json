@@ -8,7 +8,7 @@ Allow to disable an account from backend. The user will be blocked if the option
     "authors": [
     {
         "name": "diglin",
-        "email": "sly@diglin.com"
+        "email": "website@diglin.com"
     }
 ],
     "suggest": {
