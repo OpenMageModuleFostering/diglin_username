@@ -1,17 +1,5 @@
 {
-    "name": "OpenMageModuleFostering/Diglin_Username",
-    "type": "magento-module",
-    "license": "OSL-v3.0",
-    "homepage": "",
-    "description": "Create and login to an account thanks to a username AND email address.&#xD;
-Allow to disable an account from backend. The user will be blocked if the option in the customer backend is set to no",
-    "authors": [
-    {
-        "name": "diglin",
-        "email": "sly@diglin.com"
-    }
-],
-    "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+    "keywords": [
+        "openmage-module"
+    ]
 }
